@@ -19,7 +19,7 @@ function getHtmlFiles() {
 }
 
 export default defineConfig({
-  base: '/',
+  base: './',
   root: './',
   publicDir: 'public',
   build: {
