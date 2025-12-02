@@ -85,8 +85,6 @@
             }
 
             &__card {
-                background-size: cover;
-                background-position: center;
                 background-repeat: no-repeat;
                 height: 430px;
 
@@ -185,7 +183,7 @@
 
                     &::after {
                         content: '';
-                        background-image: url('../images/icons/arrow-black.svg') center center no-repeat;
+                        background: url('../images/icons/arrow-black.svg') center center no-repeat;
                         width: 24px;
                         height: 24px;
                         position: absolute;
@@ -208,7 +206,7 @@
                 padding: 32px;
                 object-fit: cover;
                 border-radius: 24px;
-                background-image: url('../images/production/assortment.jpg') center / cover no-repeat;
+                background: url('../images/production/assortment.jpg') center / cover no-repeat;
             }
         }
 

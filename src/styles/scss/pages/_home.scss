@@ -126,7 +126,7 @@ section {
                 transform: translateY(-50%);
                 width: 16px;
                 height: 16px;
-                background-image: url('../images/icons/arrow-black.svg');
+                background: url('../images/icons/arrow-black.svg');
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: contain;
@@ -281,7 +281,6 @@ section {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    max-width: 298px;
     width: 100%;
 
     &__image {
@@ -742,7 +741,6 @@ section {
         display: flex;
         flex-direction: column;
         gap: 12px;
-        max-width: 298px;
         width: 100%;
 
         &__image {
