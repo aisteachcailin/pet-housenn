@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог — ПЭТ-Хаус</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;600&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/catalog-5WrJJvk1.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/form-OE5d0XDB.js">
+  <link rel="stylesheet" crossorigin href="/assets/form-C1qoMVDP.css">
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="main catalog-page">
+        <section class="hero">
+            <div class="container">
+                <div class="hero__text">
+                    <h1 class="hero__title">Каталог продукции</h1>
+                    <p class="hero__subtitle hero__subtitle--catalog">Найдите идеальное решение для упаковки Вашего продукта</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="features__grid">
+                    <article class="features__item">
+                        <div class="features__icon shadow-block">
+                            <img src="/images/icons/low-price.svg" alt="Низкие цены">
+                        </div>
+                        <p class="features__text">Низкие цены</p>
+                    </article>
+                    <article class="features__item">
+                        <div class="features__icon shadow-block">
+                            <img src="/images/icons/high-quality.svg" alt="Высокое качество">
+                        </div>
+                        <p class="features__text">Высокое качество</p>
+                    </article>
+                    <article class="features__item">
+                        <div class="features__icon shadow-block">
+                            <img src="/images/icons/individual-design.svg" alt="Индивидуальный дизайн">
+                        </div>
+                        <p class="features__text">Индивидуальный дизайн</p>
+                    </article>
+                    <article class="features__item">
+                        <div class="features__icon shadow-block">
+                            <img src="/images/icons/fast-delivery.svg" alt="Быстрая доставка">
+                        </div>
+                        <p class="features__text">Быстрая доставка</p>
+                    </article>
+                    <article class="features__item">
+                        <div class="features__icon shadow-block">
+                            <img src="/images/icons/big-assortment.svg" alt="Большой ассортимент">
+                        </div>
+                        <p class="features__text">Большой ассортимент</p>
+                    </article>
+                </div>
+
+                <div class="features__slider swiper" data-slider="catalog-features">
+                    <div class="swiper-wrapper">
+                        <article class="swiper-slide features__item">
+                            <div class="features__icon shadow-block">
+                                <img src="/images/icons/low-price.svg" alt="Низкие цены">
+                            </div>
+                            <p class="features__text">Низкие цены</p>
+                        </article>
+                        <article class="swiper-slide features__item">
+                            <div class="features__icon shadow-block">
+                                <img src="/images/icons/high-quality.svg" alt="Высокое качество">
+                            </div>
+                            <p class="features__text">Высокое качество</p>
+                        </article>
+                        <article class="swiper-slide features__item">
+                            <div class="features__icon shadow-block">
+                                <img src="/images/icons/individual-design.svg" alt="Индивидуальный дизайн">
+                            </div>
+                            <p class="features__text">Индивидуальный дизайн</p>
+                        </article>
+                        <article class="swiper-slide features__item">
+                            <div class="features__icon shadow-block">
+                                <img src="/images/icons/fast-delivery.svg" alt="Быстрая доставка">
+                            </div>
+                            <p class="features__text">Быстрая доставка</p>
+                        </article>
+                        <article class="swiper-slide features__item">
+                            <div class="features__icon shadow-block">
+                                <img src="/images/icons/big-assortment.svg" alt="Большой ассортимент">
+                            </div>
+                            <p class="features__text">Большой ассортимент</p>
+                        </article>
+                    </div>
+                    <div class="features__pagination swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="company-info">
+            <div class="container">
+                <div class="company-info__grid">
+                    <article class="info-card info-card--catalog">
+                        <div class="info-card-text--top">
+                            <h3 class="info-card__title">Выдув на давальческой основе</h3>
+                            <p class="info-card__text">
+                                Производим ПЭТ-тару из наших или Ваших материалов с использованием наших или Ваших пресс-форм. Обеспечиваем качество, удобство упаковки и быструю доставку с документами.
+                            </p>
+                        </div>
+                        <button class="btn btn__outline info-card__link" data-open-modal>Оставить заявку</button>
+                    </article>
+                    <article class="info-card info-card--catalog">
+                        <div class="info-card-text--top">
+                            <h3 class="info-card__title">Преформы для выдува</h3>
+                            <p class="info-card__text">
+                                Поставляем преформы (12–88 г, горловина 28–48 мм) от ведущих российских производителей по эксклюзивным ценам. Подходят для производства ПЭТ-тары любых форм.
+                            </p>
+                        </div>
+                        <a href="#catalogList" class="btn btn__outline info-card__link">Смотреть в каталоге
+                            <img src="/images/icons/arrow-blue.svg" alt="arrow">
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalog" class="catalog-layout">
+            <div class="container">
+                <div class="catalog-layout__inner">
+                    <aside class="catalog-sidebar">
+                        <form class="catalog-filters" id="catalogFilters">
+                            <div class="catalog-filters__mobile-header">
+                                <span class="catalog-filters__mobile-title">Фильтры</span>
+                                <button type="button" class="catalog-filters__mobile-close" data-catalog-filters-close>
+                                    <img src="/images/icons/close.svg" alt="Закрыть фильтры">
+                                </button>
+                            </div>
+                            <div class="catalog-filters__group">
+                                <label class="catalog-filters__label">Продукция</label>
+                                <div class="catalog-filters__checkboxes">
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="type" value="Бутылки">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">Бутылки</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="type" value="Флаконы">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">Флаконы</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="type" value="Канистры">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">Канистры</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="type" value="Другая тара">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">Другая тара</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="type" value="Пробки, крышки, колпачки, ручки">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">Пробки, крышки, колпачки, ручки</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="catalog-filters__group">
+                                <label class="catalog-filters__label">Объём, мл</label>
+                                <div class="catalog-filters__checkboxes">
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="volume" value="0.1-0.2">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">0.1 — 0.2 л</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="volume" value="05.2-0.5">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">0.25 — 0.5 л</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="volume" value="0.95-0.2.0">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">0.95 — 2.0 л</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="volume" value="3.0-5.0">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">3.0 — 5.0 л</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="volume" value="2.0-3.0">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">2.0 — 3.0 л</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="volume" value="3.0-5.0">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">3.0 — 5.0 л</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="catalog-filters__group">
+                                <label class="catalog-filters__label">Горловина, мм</label>
+                                <div class="catalog-filters__checkboxes">
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="neck" value="28 Oil">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">28 Oil</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="neck" value="28 BPF, PCO">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">28 BPF, PCO</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="neck" value="38 Bericap">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">38 Bericap</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="neck" value="48 Bericap">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">48 Bericap</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="neck" value="38">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">38</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="neck" value="48">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">48</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="catalog-filters__group">
+                                <label class="catalog-filters__label">Назначение</label>
+                                <div class="catalog-filters__checkboxes">
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="purpose" value="Лимонады, соки, вода">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">Лимонады, соки, вода</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="purpose" value="Молоко">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">Молоко</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="purpose" value="Пиво, газированные напитки">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">Пиво, газированные напитки</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="purpose" value="Химия, удобрения, вода">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">Химия, удобрения, вода</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="purpose" value="БАДы, сыпучие и гранулированные продукты">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">БАДы, сыпучие и гранулированные продукты</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="purpose" value="Масла, соусы">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">Масла, соусы</span>
+                                    </label>
+                                    <label class="catalog-filters__checkbox">
+                                        <input type="checkbox" name="purpose" value="Косметика, другая тара">
+                                        <span class="catalog-filters__checkbox-mark"></span>
+                                        <span class="catalog-filters__checkbox-text">Косметика, другая тара</span>
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn__primary catalog-filters__submit">
+                                Показать
+                            </button>
+                        </form>
+                    </aside>
+
+                    <section class="catalog-results">
+                        <button type="button" class="btn btn__outline catalog-results__filters-btn" data-catalog-filters-open>
+                            Фильтры
+                            <img src="/images/icons/filter.svg" alt="Фильтры">
+                        </button>
+                        <div class="catalog-grid" id="catalogList" data-product-grid="catalog"></div>
+                        <div class="catalog-pagination" data-pagination></div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</body>
+</html>
