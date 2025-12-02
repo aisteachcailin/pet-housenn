@@ -1,0 +1,274 @@
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    backdrop-filter: blur(0px);
+    transition: all 0.3s ease;
+    height: $header-height-small;
+
+    &.scrolled {
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(6px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .logo {
+        &__text {
+            font-size: 20px;
+            font-weight: $font-weight-semibold;
+            color: $text-primary;
+        }
+    }
+
+    .nav {
+        display: flex;
+        gap: 2px;
+        align-items: center;
+
+        &__link {
+            color: $text-primary;
+            font-weight: $font-weight-light;
+            font-size: 18px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            outline: none;
+
+            &:hover {
+                background: #EAF4FF;
+            }
+        }
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: $bg;
+        z-index: 2000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        .container {
+            position: relative;
+            height: 100%; 
+            display: flex; 
+            flex-direction: column; 
+            overflow: hidden;
+        }
+
+        &--open {
+            transform: translateX(0);
+        }
+
+        &__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-shrink: 0;
+            padding: 12px 0;
+        }
+
+        &__logo {
+
+            .logo__text {
+                font-size: 20px;
+                font-weight: $font-weight-semibold;
+                color: $primary;
+            }
+        }
+
+        &__close {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 100%;
+            padding: 0;
+            transition: all 0.3s ease;
+            background: linear-gradient(
+                to bottom, 
+                rgba(93, 169, 255, 0.01), 
+                rgba(255, 255, 255, 0.8)
+            );
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        &__nav {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__link {
+            color: $text-primary;
+            font-weight: $font-weight-light;
+            text-decoration: none;
+            border-bottom: 1px solid $text-light;
+            transition: all 0.3s ease;
+            display: block;
+
+            &--active {
+                color: $primary;
+                font-weight: $font-weight-medium;
+            }
+        }
+
+        &__btn {
+            margin-top: 32px;
+            flex-shrink: 0;
+        }
+
+        &__contacts {
+            background: $white;
+            padding: 12px !important;
+            border-radius: 13px !important;
+            flex-shrink: 0;
+            margin-top: auto;
+        }
+
+        &__contact-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: $primary;
+            text-decoration: underline;
+            font-size: 16px;
+            font-weight: $font-weight-light;
+            margin-bottom: 16px;
+            transition: color 0.3s ease;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &:hover {
+                color: $primary-hover;
+            }
+        }
+
+        &__contact-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+    }
+
+    @media (min-width: $breakpoint-small-desktop) {
+        height: $header-height;
+    }
+
+    @media (max-width: $breakpoint-small-desktop) {
+
+        .nav {
+            display: none;
+        }
+
+        #contactBtn {
+            display: none;
+        }
+
+        .burger {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 100%;
+            background: linear-gradient(
+                to bottom, 
+                rgba(93, 169, 255, 0.01), 
+                rgba(255, 255, 255, 0.8)
+            );
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .mobile-menu {
+            padding-bottom: 32px;
+
+            &__logo .logo__text {
+                font-size: 18px;
+            }
+
+            &__link {
+                font-size: 24px;
+                padding: 32px 0 8px;
+            }
+
+            &__btn {
+                margin-top: 32px;
+            }
+
+            &__contact-link {
+                font-size: 24px;
+                gap: 8px;
+                font-weight: $font-weight-medium;
+                margin-bottom: 12px;
+            }
+
+            &__contact-icon {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        .mobile-menu {
+            padding-bottom: 24px;
+
+            &__logo .logo__text {
+                font-size: 16px;
+            }
+
+            &__link {
+                font-size: 20px;
+                padding: 20px 0 0;
+            }
+
+            &__btn {
+                margin-top: 20px;
+            }
+
+            &__contact-link {
+                font-size: 16px;
+                margin-bottom: 8px;
+            }
+
+            &__contact-icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}

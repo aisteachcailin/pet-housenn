@@ -1,0 +1,37 @@
+// Фоновые цвета
+$bg: #F8FAFC;
+$white: #ffffff;
+
+// Акцентные цвета
+$primary: #5DA9FF;
+$primary-hover: #69B0FF;
+$primary-light: #9FCFF4;
+
+// Цвета текста
+$text-primary: #05133A;
+$text-secondary: #516173;
+$text-muted: #7E869B;
+$text-light: #A1B6CC;
+
+// Границы и разделители
+$border: #DFE3EE;
+
+// Цвета форм
+$form-bg: #3161A3;
+$form-checkbox-bg: #29558F;
+$error: #FF4D4D;
+
+// Типографика
+$font-main: 'Roboto', sans-serif;
+$font-weight-light: 300;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+
+// Адаптивность
+$container-width: 1320px;
+$header-height: 88px;
+$header-height-small: 72px;
+$breakpoint-mobile: 320px;
+$breakpoint-tablet: 768px;
+$breakpoint-small-desktop: 1340px;
+$breakpoint-desktop: 1920px;

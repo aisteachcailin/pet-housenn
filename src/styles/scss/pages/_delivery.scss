@@ -1,0 +1,219 @@
+    .conditions {
+        display: grid;
+        gap: 40px;
+        grid-template-columns: repeat(2, 1fr);
+
+        &__title {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        &__desc {
+            font-size: 24px;
+            font-weight: $font-weight-light;
+
+            span {
+                margin-top: 8px;
+                color: $text-light;
+            }
+        }
+
+        &__info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        &__detail {
+            font-size: 24px;
+            display: flex;
+
+            a {
+                color: $primary;
+            }
+        }
+
+        &__name {
+            color: $text-muted;
+            font-weight: $font-weight-light;
+            width: 60%;
+        }
+
+        &__value {
+            color: $text-primary;
+            font-weight: $font-weight-medium;
+            flex: 1;
+        }
+
+        &-delivery {
+            background: url('/images/background/delivery.jpg') center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            grid-column: 1 / 3;
+
+            .conditions__desc {
+                font-size: 28px;
+            }
+            .conditions__info {
+                margin-top: 87px;
+            }
+
+            &-text {
+                width: 40%;
+            }
+        }
+    }
+
+    .regions {
+        padding-bottom: 60px;
+        display: flex;
+
+        &-text {
+            position: relative;
+            width: 37%;
+        }
+
+        &__desc {
+            font-size: 24px;
+        }
+
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            position: absolute;
+            bottom: 0;
+
+            &__item {
+                background: #DEEEFF;
+                font-size: 18px;
+                font-weight: $font-weight-light;
+                color: $text-primary;
+                padding: 8px 14px;
+                border-radius: 42px;
+
+                &:first-child {
+                    background: $primary;
+                    color: $white;
+                }
+            }
+        }
+
+        &__map {
+            width: 63%;
+
+            img {
+                width: 100%;
+                height: 500px;
+                object-fit: cover;
+            }
+
+            &--mobile {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: $breakpoint-small-desktop) {
+        .conditions {
+            padding-top: 32px;
+            gap: 24px;
+
+            &__title {
+                font-size: 24px;
+            }
+
+            &-delivery {
+
+                .conditions__title {
+                    font-size: 24px;
+                    margin-bottom: 12px;
+                }
+
+                .conditions__desc {
+                    font-size: 16px;
+                }
+
+                &-text {
+                    width: 100%;
+                }
+            }
+
+            &-payment {
+                .conditions__desc {
+                    font-size: 18px;
+                }
+            }
+
+            &__detail {
+                flex-direction: column;
+                font-size: 18px;
+            }
+
+            &__name {
+                width: 100%
+            }
+        }
+
+        .regions {
+            padding-bottom: 30px;
+
+            &__title {
+                font-size: 28px;
+                margin-bottom: 16px;
+            }
+
+            &-text {
+                width: auto;
+            }
+
+            &-desc {
+                font-size: 18px;
+            }
+
+            &-list {
+                gap: 8px;
+
+                &__item {
+                    padding: 12px 8px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+
+        .conditions {
+            grid-template-columns: 1fr;
+
+            &-delivery {
+                grid-column: 1 / 2;
+            }
+        }
+
+        .regions {
+            flex-direction: column;
+
+            &-list {
+                position: static;
+            }
+
+            &__map {
+                width: 100%;
+
+                &--desktop {
+                    display: none;
+                }
+
+                &--mobile {
+                    display: block;
+                    width: 100%;
+                    
+                    img {
+                        height: 250px;
+                    }
+                }
+            }
+        }
+    }
