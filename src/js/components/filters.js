@@ -22,7 +22,7 @@ export function initCategoryTags() {
             const category = tag.textContent.trim();
             const purpose = categoryMap[category];
             if (purpose) {
-                const url = `/src/pages/catalog.html?purpose=${encodeURIComponent(purpose)}`;
+                const url = `catalog.html?purpose=${encodeURIComponent(purpose)}`;
                 window.location.href = url;
             }
         });
@@ -33,7 +33,7 @@ export function initCategoryTags() {
             const category = tag.textContent.trim();
             const purpose = categoryMap[category];
             if (purpose) {
-                const url = `/src/pages/catalog.html?purpose=${encodeURIComponent(purpose)}`;
+                const url = `catalog.html?purpose=${encodeURIComponent(purpose)}`;
                 window.location.href = url;
             }
         });
@@ -52,7 +52,7 @@ export function initProductionFilters() {
         item.addEventListener('click', () => {
             const title = item.querySelector('h4')?.textContent.trim();
             const filter = filterMap[title] || 'Пищевая промышленность';
-            const url = `/src/pages/catalog.html?purpose=${encodeURIComponent(filter)}`;
+            const url = `catalog.html?purpose=${encodeURIComponent(filter)}`;
             window.location.href = url;
         });
     });

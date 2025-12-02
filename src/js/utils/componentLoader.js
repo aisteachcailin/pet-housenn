@@ -9,14 +9,12 @@ export function loadComponent(id, file, callback) {
     
     fetch(file)
         .then((response) => {
-            console.log(`Response status for ${file}:`, response.status);
             if (!response.ok) {
                 throw new Error(`HTTP error: ${response.status}`);
             }
             return response.text();
         })
         .then((data) => {
-            console.log(`Successfully loaded ${id}, data length:`, data.length);
             const element = document.getElementById(id);
             if (element) {
                 element.innerHTML = data;

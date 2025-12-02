@@ -428,7 +428,6 @@ class FormValidator {
         }
 
         if (!isValid) {
-            console.log('Form validation failed, submission blocked');
             return false;
         }
 
@@ -445,7 +444,6 @@ class FormValidator {
             this.form.reset();
             this.clearAllErrors();
         } catch (error) {
-            console.error('Ошибка отправки формы:', error);
             this.showErrorPopup('Произошла ошибка при отправке формы. Пожалуйста, попробуйте еще раз.');
         }
     }

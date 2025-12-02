@@ -60,7 +60,7 @@
 
         &::after {
             content: '';
-            background: url('images/icons/arrow-dropdown.svg') no-repeat center;
+            background-image: url('../images/icons/arrow-dropdown.svg') no-repeat center;
             width: 24px;
             height: 24px;
             transition: transform 0.3s ease;
@@ -104,7 +104,7 @@
             display: none;
 
             &:checked + .catalog-filters__checkbox-mark {
-                background: url('images/icons/check-blue.svg') no-repeat center;
+                background-image: url('../images/icons/check-blue.svg') no-repeat center;
             }
         }
 
@@ -260,7 +260,7 @@
 
 .catalog-page {
     .hero {
-        background-image: url('images/background/main-hero.jpg');
+        background-image: url('../images/background/main-hero.jpg');
     }
 
     .features {

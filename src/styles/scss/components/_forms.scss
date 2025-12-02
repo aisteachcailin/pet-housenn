@@ -108,7 +108,7 @@
             &:checked + .form__checkbox-checkmark {
                 background: $form-bg;
                 border-color: $primary;
-                background: url('images/icons/check-grey.svg') no-repeat center;
+                background-image: url('../images/icons/check-grey.svg') no-repeat center;
 
             }
         }
@@ -210,7 +210,7 @@
     }
 
     .form__checkbox-input:checked + .form__checkbox-checkmark {
-        background: url('images/icons/check-grey.svg') no-repeat center, #F2F3F5;
+        background-image: url('../images/icons/check-grey.svg') no-repeat center, #F2F3F5;
     }
 
     .btn {

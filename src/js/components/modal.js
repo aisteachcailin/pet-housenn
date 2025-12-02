@@ -18,7 +18,7 @@ function loadContactModal() {
         return;
     }
 
-    fetch('/src/components/contact-modal.html')
+    fetch('contact-modal.html')
         .then((response) => {
             if (!response.ok) {
                 throw new Error(`HTTP error: ${response.status}`);

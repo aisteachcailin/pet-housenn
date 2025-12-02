@@ -124,29 +124,35 @@ function initMobileMenu() {
     }
 
     function setActiveLink() {
-        const currentPath = window.location.pathname;
+        const currentPath = window.location.pathname
+            .replace(/^\//, '') 
+            .replace(/\.html$/, ''); 
+        
         const currentHash = window.location.hash;
         
         menuLinks.forEach(link => {
             link.classList.remove('mobile-menu__link--active');
             
-            try {
-                const linkUrl = new URL(link.href, window.location.origin);
-                const linkPath = linkUrl.pathname;
-                const linkHash = linkUrl.hash;
-                
-                const pathMatches = currentPath === linkPath || 
-                    (currentPath.endsWith('/index.html') && (linkPath === '/' || linkPath === '/index.html')) ||
-                    (currentPath === '/' && (linkPath === '/' || linkPath === '/index.html'));
-                
-                if (pathMatches && (!linkHash || linkHash === currentHash)) {
-                    link.classList.add('mobile-menu__link--active');
-                }
-            } catch (e) {
-                const linkHref = link.getAttribute('href');
-                if (linkHref && currentPath.includes(linkHref.replace(/^\//, '').replace(/\.html$/, ''))) {
-                    link.classList.add('mobile-menu__link--active');
-                }
+            const linkHref = link.getAttribute('href');
+            if (!linkHref) return;
+            
+            const [linkPath, linkHash] = linkHref.split('#');
+            
+            const cleanLinkPath = linkPath
+                .replace(/^\//, '')
+                .replace(/\.html$/, '');
+            
+            const pathsMatch = 
+                (cleanLinkPath === '' && (currentPath === '' || currentPath === 'index')) || 
+                (cleanLinkPath && currentPath.includes(cleanLinkPath));
+            
+            const hashesMatch = 
+                !linkHash || 
+                !currentHash ||  
+                linkHash === currentHash.replace('#', '');
+            
+            if (pathsMatch && hashesMatch) {
+                link.classList.add('mobile-menu__link--active');
             }
         });
     }
