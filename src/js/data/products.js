@@ -1,4 +1,4 @@
-const baseImagePath = '/images/catalog';
+const baseImagePath = 'images/catalog';
 
 export const products = [
     {

@@ -10,8 +10,8 @@ import { initFancyboxGallery } from './components/gallery.js';
 const $ = selector => document.querySelector(selector);
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadComponent('header', 'src/components/header.html', initHeader);
-    loadComponent('footer', 'src/components/footer.html');
+    loadComponent('header', 'header.html', initHeader);
+    loadComponent('footer', 'footer.html');
     
     initContactModal();
     initProductDetailToggle();

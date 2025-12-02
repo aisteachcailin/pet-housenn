@@ -27,7 +27,7 @@ export default defineConfig({
     assetsDir: 'assets',
     emptyOutDir: true,
     rollupOptions: {
-      input: getHtmlFiles(),
+      input: getHtmlFiles()
     }
   },
   server: {

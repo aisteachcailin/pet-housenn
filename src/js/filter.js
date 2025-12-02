@@ -469,7 +469,7 @@ function renderPagination(container, totalItems) {
 
     container.innerHTML = `
         <button class="catalog-pagination__btn catalog-pagination__btn--prev btn__outline" ${currentPage === 1 ? 'disabled' : ''}>
-            <img src="/images/icons/arrow-blue.svg" alt="Назад">
+            <img src="images/icons/arrow-blue.svg" alt="Назад">
         </button>
         <div class="catalog-pagination__pages">
             ${pages.map((page) => {
@@ -481,7 +481,7 @@ function renderPagination(container, totalItems) {
             }).join('')}
         </div>
         <button class="catalog-pagination__btn catalog-pagination__btn--next btn__outline" ${currentPage === totalPages ? 'disabled' : ''}>
-            <img src="/images/icons/arrow-blue.svg" alt="Вперед">
+            <img src="images/icons/arrow-blue.svg" alt="Вперед">
         </button>
     `;
 
