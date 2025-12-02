@@ -13,10 +13,13 @@ function getHtmlFiles() {
         }
     });
     
+    htmlFiles['main'] = resolve(__dirname, 'src/js/main.js');
+    
     return htmlFiles;
 }
 
 export default defineConfig({
+  base: '/',
   root: './',
   publicDir: 'public',
   build: {
