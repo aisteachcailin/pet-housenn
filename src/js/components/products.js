@@ -19,7 +19,7 @@ function renderProductCardsToSlider(container, products, emptyMessage = 'Нет 
     container.innerHTML = '';
 
     if (!products.length) {
-        const emptyState = document.createElement('div');
+        const emptyState = document.createElement('div'); 
         emptyState.className = 'product-grid__empty';
         emptyState.textContent = emptyMessage;
         container.appendChild(emptyState);

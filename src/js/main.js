@@ -14,26 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     loadComponent('footer', 'footer.html');
     
     initContactModal();
-    initProductDetailToggle();
-
-    
-    if ($('[data-slider="top-sales"]')) {
-        initTopSales();
-    }
-    
-    if ($('.swiper')) {
-        initSliders();
-    }
-    
-    if ($('.category-tags')) {
-        initCategoryTags();
-    }
-    
-    if ($('.production__filters')) {
-        initProductionFilters();
-    }
-    
-    if ($('[data-fancybox]')) {
-        initFancyboxGallery();
-    }
+    initTopSales();
+    initSliders();
+    initCategoryTags();
+    initProductionFilters();
+    initFancyboxGallery();
 });

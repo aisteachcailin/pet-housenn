@@ -97,7 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
             criteria.necks.forEach(neck => urlParams.append('neck', neck));
         }
         if (criteria.purposes.length > 0) {
-            criteria.purposes.forEach(purpose => urlParams.append('purpose', purpose));
+            criteria.purposes.forEach(purpose => {
+                urlParams.append('purpose', purpose);
+            });
         }
         if (criteria.sort && criteria.sort !== 'default') {
             urlParams.set('sort', criteria.sort);
@@ -141,8 +143,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         
         urlParams.getAll('purpose').forEach(purpose => {
-            const checkbox = filterForm.querySelector(`input[name="purpose"][value="${purpose}"]`);
-            if (checkbox) checkbox.checked = true;
+            if (purpose.includes('|')) {
+                const purposes = purpose.split('|').map(p => p.trim());
+                purposes.forEach(singlePurpose => {
+                    const checkbox = filterForm.querySelector(`input[name="purpose"][value="${singlePurpose}"]`);
+                    if (checkbox) checkbox.checked = true;
+                });
+            } else {
+                const checkbox = filterForm.querySelector(`input[name="purpose"][value="${purpose}"]`);
+                if (checkbox) checkbox.checked = true;
+            }
         });
         
         if (sortSelect) {
@@ -154,9 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function scrollToProducts() {
-    const gridTop = grid.getBoundingClientRect().top + window.pageYOffset;
-    const scrollPosition = gridTop - 88;
-    
+        const gridTop = grid.getBoundingClientRect().top + window.pageYOffset;
+        const scrollPosition = gridTop - 88;
+        
         if (!isElementInViewport(grid)) {
             window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
         }
@@ -226,7 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = 'hidden';
             document.documentElement.style.overflow = 'hidden';
 
-            // На мобильных устройствах раскрываем все категории при открытии фильтров
             if (window.innerWidth <= BREAKPOINT_SMALL_DESKTOP) {
                 const filterLabels = filterForm.querySelectorAll('.catalog-filters__label');
                 filterLabels.forEach(label => {
@@ -319,7 +328,6 @@ function getItemsPerPage() {
 }
 
 function matchesProduct(product, criteria) {
-
     if (criteria.types.length > 0 && !criteria.types.includes(product.type)) {
         return false;
     }
@@ -356,8 +364,9 @@ function matchesProduct(product, criteria) {
     if (criteria.purposes.length > 0) {
         let matchesPurpose = false;
         
+        const productPurposes = product.purpose.split(';').map(p => p.trim());
+        
         criteria.purposes.forEach(filterPurpose => {
-            const productPurposes = product.purpose.split(';').map(p => p.trim());
             if (productPurposes.some(productPurpose => 
                 productPurpose.includes(filterPurpose) || filterPurpose.includes(productPurpose)
             )) {

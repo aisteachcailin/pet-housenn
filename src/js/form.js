@@ -402,16 +402,13 @@ class FormValidator {
         event.preventDefault();
         event.stopPropagation();
 
-        let isValid = true;
-
         Object.values(this.inputs).forEach((input) => {
             if (input && input.type !== 'checkbox') {
-                const value = input.value ? input.value.trim() : '';
-                if (!value || !this.validateField(input)) {
-                    isValid = false;
-                }
+                input.dispatchEvent(new Event('blur', { bubbles: true}));
             }
         });
+
+        let isValid = true;
 
         if (this.inputs.agree && !this.inputs.agree.checked) {
             this.showError(this.inputs.agree, CONFIG.messages.agreementRequired);
