@@ -12,7 +12,7 @@ function On(e,t,i){console.log(`Loading component: ${e} from ${t}`),fetch(t).the
         <div class="product-card__footer">
             <span class="product-card__price">от <span>${Ni(e.price)}</span> р/шт</span>
             <button class="product-card__cart" type="button" aria-label="Добавить в корзину">
-                <img src="/images/icons/basket.svg" alt="">
+                <img src="images/icons/basket.svg" alt="">
             </button>
         </div>
     `,t}function zt(e,t){return t?`
