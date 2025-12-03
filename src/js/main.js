@@ -19,4 +19,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initCategoryTags();
     initProductionFilters();
     initFancyboxGallery();
+    initProductDetailToggle()
 });

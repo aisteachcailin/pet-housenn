@@ -17,7 +17,7 @@ export function createProductCard(product) {
         <div class="product-card__footer">
             <span class="product-card__price">от <span>${formatPrice(product.price)}</span> р/шт</span>
             <button class="product-card__cart" type="button" aria-label="Добавить в корзину">
-                <img src="images/icons/basket.svg" alt="">
+                <img src="/images/icons/basket.svg" alt="">
             </button>
         </div>
     `;
@@ -68,48 +68,52 @@ export function renderProductCards(container, products, emptyMessage = 'Нет �
     container.appendChild(fragment);
 }
 
-
 export function initProductDetailToggle() {
     document.addEventListener('click', (event) => {
         const detail = event.target.closest('.product-card__detail');
-        if (!detail) {
-            return;
-        }
+        if (!detail) return;
 
         const textValue = detail.querySelector('.text-value');
-        if (!textValue) {
-            return;
-        }
+        if (!textValue) return;
 
         const isTextOverflowing = textValue.scrollWidth > textValue.clientWidth;
-        if (!isTextOverflowing && !detail.classList.contains('expanded')) {
-            return;
-        }
+        if (!isTextOverflowing && !detail.classList.contains('expanded')) return;
 
-        const isExpanded = detail.classList.contains('expanded');
+        textValue.style.transition = 'none';
         
-        if (isExpanded) {
-            textValue.style.maxHeight = textValue.scrollHeight + 'px';
-            textValue.offsetHeight; 
-            textValue.style.maxHeight = '1.2em';
+        if (detail.classList.contains('expanded')) {
+            const currentHeight = textValue.scrollHeight;
+            textValue.style.maxHeight = currentHeight + 'px';
+            textValue.style.whiteSpace = 'normal';
             
-            setTimeout(() => {
+            requestAnimationFrame(() => {
                 detail.classList.remove('expanded');
-                textValue.style.whiteSpace = 'nowrap';
-                textValue.style.textOverflow = 'ellipsis';
-                textValue.style.maxHeight = '';
-            }, 300);
+                textValue.style.transition = 'max-height 0.3s ease';
+                textValue.style.maxHeight = '1.2em';
+                
+                setTimeout(() => {
+                    textValue.style.whiteSpace = 'nowrap';
+                    textValue.style.textOverflow = 'ellipsis';
+                    textValue.style.maxHeight = '';
+                    textValue.style.transition = '';
+                }, 300);
+            });
+            
         } else {
             detail.classList.add('expanded');
+            textValue.style.maxHeight = '1.2em';
             textValue.style.whiteSpace = 'normal';
             textValue.style.textOverflow = 'clip';
-            textValue.style.maxHeight = '1.2em';
-            textValue.offsetHeight; 
-            textValue.style.maxHeight = textValue.scrollHeight + 'px';
             
-            setTimeout(() => {
-                textValue.style.maxHeight = 'none';
-            }, 300);
+            requestAnimationFrame(() => {
+                textValue.style.transition = 'max-height 0.3s ease';
+                textValue.style.maxHeight = textValue.scrollHeight + 'px';
+                
+                setTimeout(() => {
+                    textValue.style.maxHeight = 'none';
+                    textValue.style.transition = '';
+                }, 300);
+            });
         }
     });
 }

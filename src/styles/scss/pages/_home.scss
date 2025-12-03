@@ -328,7 +328,7 @@ section {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            transition: all 0.3s ease;
+            transition: max-height 0.3s ease;
             max-height: 1.2em;
 
             &.animating {
