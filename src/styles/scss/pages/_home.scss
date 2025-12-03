@@ -664,7 +664,6 @@ section {
             gap: 8px;
             font-size: 16px;
             height: 64px;
-            box-sizing: content-box;
             box-shadow: 
                 -2px 2px 14px 1px rgba(67, 93, 124, 0.08),
                 -1px 1px 4px 1px rgba(67, 93, 124, 0.1);
@@ -786,10 +785,6 @@ section {
         .form-fields-wrapper {
             gap: 12px;
         }
-
-        .form__input {
-            
-        }
     }
 
     .info-card {
@@ -842,7 +837,7 @@ section {
         height: 100vh;
     }
 
-    .features__grid {
+    .main-page .features__grid {
         width: 100%;
     }
 
