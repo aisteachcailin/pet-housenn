@@ -5,7 +5,6 @@
  * @param {Function} callback - Функция обратного вызова после загрузки
  */
 export function loadComponent(id, file, callback) {
-    console.log(`Loading component: ${id} from ${file}`);
     
     fetch(file)
         .then((response) => {
@@ -23,8 +22,5 @@ export function loadComponent(id, file, callback) {
                 }
             }
         })
-        .catch((error) => {
-            console.error(`Error loading component ${id} from ${file}:`, error);
-        });
 }
 

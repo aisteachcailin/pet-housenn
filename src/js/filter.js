@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const applyButton = filterForm.querySelector('.catalog-filters__submit');
 
     if (!filterForm || !grid) {
-        console.error('Filter form or grid not found');
         return;
     }
 
