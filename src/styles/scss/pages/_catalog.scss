@@ -12,6 +12,13 @@
     }
 }
 
+body.scroll-locked {
+    overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
 .catalog-sidebar {
     position: sticky;
     top: 120px;
@@ -27,6 +34,54 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    max-height: 70vh;
+    min-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 0px;
+    }
+    
+    &:hover::-webkit-scrollbar {
+        width: 4px;
+        display: block;
+    }
+    
+    &:hover::-webkit-scrollbar-thumb {
+        background: rgba(93, 169, 255, 0.3);
+        border-radius: 2px;
+    }
+    
+    &:hover::-webkit-scrollbar-thumb:hover {
+        background: rgba(93, 169, 255, 0.5);
+    }
+
+    &.has-scroll {
+        padding-right: 4px;
+        
+        &:hover::-webkit-scrollbar {
+            display: block;
+            width: 4px;
+        }
+        
+        &:hover::-webkit-scrollbar-thumb {
+            background: rgba(93, 169, 255, 0.4);
+            border-radius: 2px;
+        }
+    }
 
     &__group {
         display: flex;
@@ -277,12 +332,10 @@
         margin: 24px 0 32px;
 
         &__page {
-        background: transparent;
+            background: transparent;
         }
     }
 }
-
-
 
 @media (max-width: $breakpoint-small-desktop) {
     
@@ -315,8 +368,13 @@
                 -1px 1px 4px 1px rgba(67, 93, 124, 0.1);
             max-height: calc(100vh - 120px);
             overflow-y: auto;
-            transform: translateY(100%);
+            scrollbar-width: auto;
+            scrollbar-color: auto;
             transition: transform 0.3s ease;
+
+            &::-webkit-scrollbar {
+                width: auto;
+            }
         }
 
         .catalog-filters__mobile-header {
@@ -441,6 +499,10 @@
                 }
             }
         }
+        .product-card__image img {
+            height: 100%;
+            max-height: 320px;
+        }
     }
 }
 
@@ -453,7 +515,7 @@
     }
 
     .catalog-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 24px;
     }
 
@@ -462,7 +524,8 @@
             max-width: calc(100vw - 24px);
 
             &__image img {
-                height: 282px;
+                height: 100%;
+                max-height: 520px;
             }
 
             &__detail span:first-child {
@@ -488,5 +551,11 @@
         .catalog-filters__checkbox-text {
             font-size: 16px;
         }
+    }
+}
+
+@media (max-width: 690px) {
+    .catalog-grid {
+        grid-template-columns: 1fr;
     }
 }

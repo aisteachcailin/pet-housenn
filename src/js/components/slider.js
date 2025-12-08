@@ -50,16 +50,32 @@ export function initSliders() {
             watchOverflow: true,
             breakpoints: {
                 320: {
-                    slidesPerView: slidesMobile,
-                    spaceBetween: spaceMobile,
+                    slidesPerView: 1.2, 
+                    spaceBetween: 16, 
+                },
+                460: {
+                    slidesPerView: 1.5, 
+                    spaceBetween: 20,
+                },
+                600: {
+                    slidesPerView: 2.2, 
+                    spaceBetween: 20,
                 },
                 768: {
-                    slidesPerView: slidesTablet,
-                    spaceBetween: spaceTablet,
+                    slidesPerView: 2.2, 
+                    spaceBetween: 24,
+                },
+                820: {
+                    slidesPerView: 3, 
+                    spaceBetween: 24,
+                },
+                1024: {
+                    slidesPerView: 3.2,
+                    spaceBetween: 28,
                 },
                 1200: {
-                    slidesPerView: slidesDesktop,
-                    spaceBetween: spaceDesktop,
+                    slidesPerView: 4, 
+                    spaceBetween: 32,
                 },
             },
         });
@@ -121,4 +137,17 @@ export function initSliders() {
             observeParents: true,
         });
     });
+
+    const productionVideo = document.querySelector('.production-video');
+    
+    if (productionVideo) {
+        
+        productionVideo.addEventListener('click', (e) => {
+            e.preventDefault();
+            const link = productionVideo.closest('a');
+            if (link && link.href) {
+                link.click();
+            }
+        });
+    }
 }

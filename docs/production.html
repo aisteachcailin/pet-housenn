@@ -7,9 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;600&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="./assets/form-DrtEXl28.js"></script>
-  <script type="module" crossorigin src="./assets/main-CE9eG4OX.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/form-CbSlTGyX.css">
+  <script type="module" crossorigin src="./assets/form-B_mXNXCI.js"></script>
+  <script type="module" crossorigin src="./assets/main-C0ETf5iL.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/form-ctCRAUiH.css">
   <link rel="stylesheet" crossorigin href="./assets/main-BzkOafDQ.css">
 </head>
 <body>
@@ -44,11 +44,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="production-slider__big">
-                    <a href="images/production/production-4.jpg" data-fancybox="production-gallery">
-                        <img src="images/production/production-4.jpg" alt="production complex">
-                    </a>
-                </div>
+<div class="production-slider__big">
+    <a href="images/production/production-desktop.mp4" data-fancybox="production-gallery" data-type="video">
+        <video 
+            class="production-video" 
+            muted 
+            playsinline 
+            loop 
+            preload="metadata"
+            aria-label="Видео производства"
+            poster="images/production/production-4.jpg"
+        >
+            <!-- ВАЖНО: правильный путь к видео -->
+            <source src="./images/production/production-desktop.mp4" type="video/mp4" media="(min-width: 768px)">
+            <source src="./images/production/production-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
+            <!-- Fallback image -->
+            <img src="images/production/production-4.jpg" alt="production complex">
+        </video>
+    </a>
+</div>
             </section> 
 
             <section class="production-tech">

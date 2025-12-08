@@ -830,6 +830,10 @@ section {
         grid-template-columns: 1fr;
     }
 
+    .main-page .hero__subtitle {
+        width: 100%;
+    }
+
     .hero {
         height: 100vh;
     }
@@ -838,11 +842,15 @@ section {
         width: 100%;
     }
 
+    .business .container {
+        height: 600px;
+    }
+
     .business__tags {
         width: 100%;
     }
 
-    .custom-form {
+    .custom-form {f
 
         &__subtitle {
             margin-bottom: 132px;
@@ -857,4 +865,5 @@ section {
         }
     }
 }
+
 

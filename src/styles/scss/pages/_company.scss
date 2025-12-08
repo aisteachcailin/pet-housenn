@@ -323,6 +323,7 @@
 
                 &__desc {
                     font-size: 18px;
+                    width: 70%;
                 }
 
                 &__mission {
@@ -510,6 +511,23 @@
 
                 &__item {
                     flex-direction: column;
+                }
+            }
+
+            &-pethouse__desc {
+                width: 100%;
+            }
+
+            &-info {
+                flex-direction: column;
+                gap: 32px;
+
+                &__title {
+                    margin-bottom: 24px;
+                }
+
+                &__content, &__certificate {
+                    width: 100%;
                 }
             }
         }
