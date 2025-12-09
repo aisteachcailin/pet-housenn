@@ -768,10 +768,6 @@ section {
         grid-template-columns: 1fr 1fr;
     }
 
-    .info-card {
-        padding: 16px;
-    }
-
     .custom-form {
 
         &__subtitle {
@@ -786,7 +782,7 @@ section {
 
     .info-card {
         border-radius: 16px;
-        padding: 24px;
+        padding: 16px;
 
         &__title {
             font-size: 18px;
@@ -835,8 +831,7 @@ section {
     }
 
     .hero {
-        height: 100vh;
-        background-image: url('../images/background/main-hero-mobile.jpg');
+        height: 550px;
     }
 
     .main-page .features__grid {
@@ -866,5 +861,13 @@ section {
         }
     }
 }
+
+@media (max-width: 500px) {
+    .hero {
+        background-image: url('../images/background/main-hero-mobile.jpg');
+    }
+}
+
+
 
 
