@@ -115,7 +115,7 @@ body.scroll-locked {
 
         &::after {
             content: '';
-            background-image: url('../images/icons/arrow-dropdown.svg') no-repeat center;
+            background: url('../images/icons/arrow-dropdown.svg') no-repeat center;
             width: 24px;
             height: 24px;
             transition: transform 0.3s ease;
