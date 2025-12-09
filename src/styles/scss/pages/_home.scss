@@ -285,6 +285,7 @@ section {
             height: 294px;
             border-radius: 24px;
             object-fit: cover; 
+            aspect-ratio: 1 / 1;
         }
     }
 
@@ -325,7 +326,6 @@ section {
             overflow: hidden;
             text-overflow: ellipsis;
             transition: max-height 0.3s ease;
-            max-height: 1.2em;
 
             &.animating {
                 overflow: hidden;
@@ -836,6 +836,7 @@ section {
 
     .hero {
         height: 100vh;
+        background-image: url('../images/background/main-hero-mobile.jpg');
     }
 
     .main-page .features__grid {

@@ -508,6 +508,9 @@ body.scroll-locked {
 
 
 @media (max-width: $breakpoint-tablet) {
+    .hero {
+        background-image: url('../images/background/main-hero-mobile.jpg');
+    }
     .catalog-layout {
         &__inner {
             gap: 24px;
@@ -515,7 +518,7 @@ body.scroll-locked {
     }
 
     .catalog-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 24px;
     }
 

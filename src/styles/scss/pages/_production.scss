@@ -29,18 +29,11 @@
             flex-direction: column;
             gap: 120px;
 
-            &__big img {
-                width: 100%;
-                height: 742px;
-                object-fit: cover;
-                border-radius: 24px;
-            }
-
             &__big {
                 position: relative;
                 width: 100%;
                 border-radius: 24px;
-                overflow: hidden; /* Это обеспечит скругление углов видео */
+                overflow: hidden; 
                 
                 a {
                     display: block;
@@ -52,12 +45,11 @@
                 video.production-video {
                     width: 100%;
                     height: 742px;
-                    object-fit: cover; /* Заполнение всей области */
+                    object-fit: cover; 
                     border-radius: 24px;
                     display: block;
-                    cursor: pointer; /* Показывает, что можно кликнуть */
+                    cursor: pointer; 
                     
-                    /* Стиль для состояния при наведении */
                     &:hover {
                         opacity: 0.95;
                     }
@@ -335,10 +327,6 @@
 
             &-slider {
                 gap: 48px;
-
-                &__big img {
-                    height: 395px;
-                }
             }
 
             &-tech {
@@ -453,10 +441,6 @@
     .production-page {
 
         .production {
-            
-            &-slider__big img {
-                height: 232px;
-            }
 
             &-urgent-cards {
                 grid-template-columns: 1fr;

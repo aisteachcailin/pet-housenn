@@ -141,13 +141,64 @@ export function initSliders() {
     const productionVideo = document.querySelector('.production-video');
     
     if (productionVideo) {
+        const playVideo = () => {
+            productionVideo.play().catch(error => {
+                console.log('Автозапуск видео не удался:', error);
+            });
+        };
         
-        productionVideo.addEventListener('click', (e) => {
-            e.preventDefault();
-            const link = productionVideo.closest('a');
-            if (link && link.href) {
-                link.click();
+        if (productionVideo.readyState >= 2) {
+            playVideo();
+        } else {
+            productionVideo.addEventListener('loadeddata', playVideo);
+        }
+        
+        productionVideo.addEventListener('click', () => {
+            if (productionVideo.paused) {
+                productionVideo.play();
             }
+        });
+    }
+
+        const videoLink = document.querySelector('.production-slider__big a');
+    const videoElement = document.querySelector('.production-video');
+    
+    if (videoLink && videoElement) {
+        videoLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.9);
+                z-index: 9999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            `;
+            
+            const videoClone = videoElement.cloneNode(true);
+            videoClone.style.cssText = `
+                max-width: 90%;
+                max-height: 90%;
+                object-fit: contain;
+            `;
+            videoClone.controls = true;
+            videoClone.muted = false;
+            
+            modal.appendChild(videoClone);
+            document.body.appendChild(modal);
+            
+            modal.addEventListener('click', () => {
+                videoClone.pause();
+                modal.remove();
+            });
+            
+            videoClone.play();
         });
     }
 }
