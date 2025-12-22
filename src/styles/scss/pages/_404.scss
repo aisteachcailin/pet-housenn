@@ -35,8 +35,8 @@
 }
 
 @media (max-width: ($breakpoint-laptop - 1)) {
-    .error-card {
 
+    .error-card {
         &__title {
             font-size: 220px;
         }
