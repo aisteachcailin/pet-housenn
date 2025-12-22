@@ -21,11 +21,19 @@
         align-items: center;
         justify-content: space-between;
         height: 100%;
+        width: 100%;
+    }
+
+    .container {
+        padding: 0 16px;
+        max-width: $container-width;
+        margin: 0 auto;
+        width: 100%;
     }
 
     .logo {
         &__text {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: $font-weight-semibold;
             color: $text-primary;
         }
@@ -179,11 +187,11 @@
         }
     }
 
-    @media (min-width: $breakpoint-small-desktop) {
+    @media (min-width: $breakpoint-desktop) {
         height: $header-height;
     }
 
-    @media (max-width: $breakpoint-small-desktop) {
+    @media (max-width: ($breakpoint-desktop - 1)) {
 
         .nav {
             display: none;

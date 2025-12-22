@@ -3,10 +3,10 @@
 }
 
 section {
-    padding: 60px 0 0;
+    padding-top: 60px;
 
     .container{
-        padding: 40px 0 0;
+        padding-top: 40px;
     }
 }
 
@@ -124,7 +124,7 @@ section {
             transform: translateY(-50%);
             width: 16px;
             height: 16px;
-            background: url('../images/icons/arrow-black.svg');
+            background: url('/images/icons/arrow-black.svg');
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
@@ -139,12 +139,11 @@ section {
 }
 
 .hero {
-    background-image: url('../images/background/main-hero.jpg');
+    background-image: url('/images/background/main-hero.jpg');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center 90%;
     background-size: cover;
     height: 100vh;
-    padding: 0;
     text-align: center;
     display: flex;
     margin-top: -$header-height;
@@ -160,7 +159,6 @@ section {
     &__title {
         font-size: 64px;
         margin-bottom: 16px;
-        line-height: 115%;
         font-weight: $font-weight-semibold;
         color: $text-primary;
     }
@@ -179,12 +177,36 @@ section {
 }
 
 .features {
+    overflow: hidden;
 
     &__grid {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 24px;
         align-items: center;
+    }
+
+    &__slider {
+        display: none;
+    }
+
+    &__pagination {
+        display: none;
+    }
+
+    .container {
+        padding-top: 0;
+    }
+}
+
+.main-page .features {
+    
+    &__slider {
+        display: none;
+    }
+
+    &__pagination {
+        display: none;
     }
 
     &__item {
@@ -222,12 +244,15 @@ section {
     }
 
     .container {
-        background-image: url('../images/background/news.jpg');
+        background-image: url('/images/background/news.jpg');
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     &__text {
@@ -383,7 +408,9 @@ section {
     padding-bottom: 60px;
 
     .container {
-        background-image: url('../images/background/business.jpg');
+        background-image: url('/images/background/business.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
         height: 600px;
     }
 
@@ -396,9 +423,13 @@ section {
     }
 
     &__content {
-        width: 40%;
+        width: 53%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
     }
-
+    
     &__tags {
         display: flex;
         flex-wrap: wrap;
@@ -410,7 +441,11 @@ section {
 }
 
 .company-info {
-    padding-bottom: 60px;
+    padding: 60px 0; 
+
+    .container {
+        padding-top: 0;
+    }
 
     &__grid {
         display: grid;
@@ -424,6 +459,7 @@ section {
     justify-content: space-between;
     align-items: start;
     margin: 60px 0 120px;
+    gap: 57px;
     
     &__title {
         margin-bottom: 12px;
@@ -495,13 +531,20 @@ section {
     padding: 60px 0;
 
     .container {
-        background-image: url('../images/background/main-form.jpg');
+        background-image: url('/images/background/main-form.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 650px;
     }
 
     &__content {
         max-width: 600px;
         margin: 0;
         text-align: left;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     &__title {
@@ -512,8 +555,7 @@ section {
     &__subtitle {
         font-size: 24px;
         font-weight: $font-weight-light;
-        margin-bottom: 62px;
-        color: $white;
+        color: #EAF4FF;
     }
 }
 
@@ -560,25 +602,38 @@ section {
     }
 }
 
-@media (max-width: $breakpoint-small-desktop) {
+@media (max-width: 1384px) {
+    .container {
+        padding-right: 32px;
+        padding-left: 32px;
+    }
 
+    .new-products, .business, .custom-form {
+        margin: 0 32px;
+    }
+}
+
+@media (max-width: ($breakpoint-desktop - 1)) {
+
+    .business__content {
+        width: 60%;
+    }
+}
+
+@media (max-width: ($breakpoint-laptop - 1)) {
     .main {
         padding-top: $header-height-small;
     }
 
     section {
-        padding: 40px 0 0;
+        padding-top: 40px;
 
         .container {
-            padding: 0 24px 0;
+            padding-top: 32px;
         }
     }
 
-    .container {
-        padding: 0 32px;
-    }
-
-    .padding-page .container{
+    .padding-page .container {
         margin-top: 38px;
     }
 
@@ -631,7 +686,8 @@ section {
 
     .hero {
         padding: 110px 0 24px;
-        height: 600px;
+        height: 580px;
+        background-image: url('/images/background/main-hero-tablet.jpg');
 
         &__title {
             font-size: 28px;
@@ -648,8 +704,27 @@ section {
         padding-top: 32px;
         font-size: 18px;
     }
+    
+    .main-page .features {
 
-    .features {
+        &__grid {
+            display: none;
+        }
+
+        &__slider {
+            display: block;
+            position: relative;
+            padding: 0 16px 28px;
+            overflow: visible;
+
+            .swiper-slide {
+                width: auto;
+                height: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
 
         &__item {
             flex-direction: row;
@@ -667,7 +742,9 @@ section {
                 box-shadow: none;
                 background: $white;
                 width: 40px;
-                height: 40px;  
+                height: 40px;
+                padding: 0;
+                border-radius: 0;
                 
                 img {
                     width: 40px;
@@ -679,17 +756,38 @@ section {
         &__text {
             font-size: 16px;
         }
-    }
 
-    .main-page .features__grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-        width: 70%;
-        margin: 0 auto;
+        &__pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 16px;
+            gap: 8px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            .swiper-pagination-bullet {
+                width: 6px;
+                height: 6px;
+                margin: 0 !important;
+                background: rgba(93, 169, 255, 0.2);
+                opacity: 1;
+                border-radius: 50%;
+
+                &-active {
+                    background: $primary;
+                }
+            }
+        }
     }
 
     .new-products {
         height: 500px;
+
+        .container {
+            background-image: url('/images/background/news-tablet.jpg');
+        }
 
         &__title {
             margin-bottom: 12px;
@@ -701,15 +799,12 @@ section {
     }
 
     .business {
+        margin-top: 8px;
+        padding-bottom: 8px;
         
         .container {
-            height: 550px;
-        }
-
-        &__content {
-            width: auto;
-            height: 100%;
-            position: relative;
+            min-height: 550px;
+            background-image: url('/images/background/business-mobile.jpg');
         }
 
         &__subtitle {
@@ -720,10 +815,7 @@ section {
             gap: 12px;
             margin-top: 0;
             font-size: 14px;
-            position: absolute;
-            bottom: 0;
             width: 100%;
-
         }
     }
 
@@ -734,6 +826,9 @@ section {
 
         &__slider {
             margin-bottom: 24px;
+        }
+        .container {
+            padding-top: 8px;
         }
     }
 
@@ -758,6 +853,7 @@ section {
 
     .company-info {
         padding-top: 0;
+        padding-bottom: 8px;
 
         &__grid {
             gap: 24px;
@@ -770,9 +866,29 @@ section {
 
     .custom-form {
 
+        padding: 32px 0;
+
+        .container {
+            background-image: url('/images/background/main-form-tablet.jpg');
+            height: 654px;
+        }
+
+        &__subtitle {
+            font-size: 14px;    
+        }
+
+        .form-fields-wrapper {
+            gap: 12px;
+        }
+
+        .form__input {
+            padding: 30px 24px 10px;
+            font-size: 16px;
+            height: 50px;
+        }
+
         &__subtitle {
             font-size: 14px;
-            margin-bottom: 132px;
         }
 
         .form-fields-wrapper {
@@ -793,33 +909,22 @@ section {
             font-size: 16px;
         }
     }
-
-    .custom-form {
-
-        &__subtitle {
-            font-size: 14px;
-            margin-bottom: 182px;
-        }
-
-        .form-fields-wrapper {
-            gap: 12px;
-        }
-
-        .form__input {
-            padding: 30px 24px 10px;
-            font-size: 16px;
-            height: 50px;
-        }
-    }
 }
 
-@media (max-width: $breakpoint-tablet) {
-    section .container {
-        padding: 0 16px 0;
-    }
+@media (max-width: ($breakpoint-tablet - 1)) {
 
     .container {
-        padding: 0 12px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .header .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .new-products, .business, .custom-form {
+        margin: 0 12px;
     }
 
     .main-page .company-info__grid {
@@ -830,26 +935,17 @@ section {
         width: 100%;
     }
 
-    .hero {
-        height: 550px;
+    .new-products .container {
+        background-position: right center;
     }
 
-    .main-page .features__grid {
-        width: 100%;
-    }
+    .business {
+        &__content {
+            width: 80%;
+        }
 
-    .business .container {
-        height: 600px;
-    }
-
-    .business__tags {
-        width: 100%;
-    }
-
-    .custom-form {f
-
-        &__subtitle {
-            margin-bottom: 132px;
+        &__tags {
+            width: 100%;
         }
     }
 
@@ -864,7 +960,25 @@ section {
 
 @media (max-width: 500px) {
     .hero {
-        background-image: url('../images/background/main-hero-mobile.jpg');
+        background-image: url('/images/background/main-hero-mobile.jpg');
+    }
+
+    .business__content {
+        width: 100%;
+    }
+
+    .custom-form .container {
+        background-image: url('/images/background/main-form-mobile.jpg');
+    }
+}
+
+@media (max-width: 420px) {
+    .new-products .container {
+        background-image: url('/images/background/news-mobile.jpg');
+    }
+    
+    .business .container {
+        height: 660px;
     }
 }
 

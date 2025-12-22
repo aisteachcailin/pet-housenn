@@ -18,32 +18,40 @@ function getHtmlFiles() {
     return htmlFiles;
 }
 
-export default defineConfig({
-  base: './',
-  root: './',
-  publicDir: 'public',
-  build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
-    emptyOutDir: true,
-    rollupOptions: {
-      input: getHtmlFiles()
-    }
-  },
-  server: {
-    port: 3000,
-    open: true,
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@import "./src/styles/scss/base/_variables.scss";`,
+export default defineConfig(({ command }) => {
+  return {
+    base: command === 'serve' ? '/' : './',
+    root: './',
+    publicDir: 'public',
+    
+    build: {
+      outDir: 'docs',
+      assetsDir: 'assets',
+      emptyOutDir: true,
+      rollupOptions: {
+        input: getHtmlFiles()
+      },
+      copyPublicDir: true,
+    },
+    
+    server: {
+      port: 3000,
+      open: true,
+      middlewareMode: false,
+    },
+    
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@import "./src/styles/scss/base/_variables.scss";`,
+        },
       },
     },
-  },
-  resolve: {
-    alias: {
-      '@': resolve(__dirname, 'src'),
+    
+    resolve: {
+      alias: {
+        '@': resolve(__dirname, 'src'),
+      },
     },
-  },
+  };
 });

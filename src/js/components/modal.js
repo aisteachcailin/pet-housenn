@@ -31,8 +31,6 @@ function loadContactModal() {
             document.body.appendChild(modalContainer);
             setupModalHandlers();
             
-            // Инициализируем формы после загрузки модального окна
-            // Используем несколько попыток для гарантии инициализации
             let attempts = 0;
             const maxAttempts = 10;
             
@@ -135,8 +133,6 @@ export function showContactModal() {
     if (contactModal) {
         openModal(contactModal);
         
-        // Убеждаемся, что форма инициализирована при открытии модального окна
-        // Используем несколько попыток для гарантии инициализации
         let attempts = 0;
         const maxAttempts = 10;
         

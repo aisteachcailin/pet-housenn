@@ -18,6 +18,45 @@ body {
     color: $text-primary;
 }
 
+.hero__title,
+.section__title,
+.business__title,
+.production-assortment__title,
+.company-price__title {
+    line-height: 1.15;
+}
+
+.hero__subtitle,
+.business__subtitle,
+.custom-form__subtitle,
+.certificates__desc,
+.conditions__desc,
+.regions__desc,
+.info-card__text,
+.privacy {
+    line-height: 1.4;
+}
+
+.company {
+    &-hero__subtitle,
+    &-pethouse__desc,
+    &-pethouse__mission,
+    &-reasons__desc,
+    &-price__desc {
+        line-height: 1.4;
+    }
+}
+
+.production {
+    &-hero__subtitle,
+    &-tech__desc,
+    &-urgent__text,
+    &-assortment__item-text,
+    &-assortment__desc {
+        line-height: 1.4;
+    }
+}
+
 img {
     height: auto;
     display: block;

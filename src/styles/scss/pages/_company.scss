@@ -105,7 +105,7 @@
                 top: 32px;
                 width: 48px;
                 height: 38px;
-                background: url('../images/icons/quotes.svg') no-repeat;
+                background: url('/images/icons/quotes.svg') no-repeat;
             }
 
             &::before {
@@ -133,7 +133,7 @@
                 "title table"
                 "desc table"
                 "btn table";
-            gap: 16px 40px;
+            grid-template-rows: auto auto 1fr;
             align-items: start;
         }
 
@@ -146,13 +146,13 @@
         &__desc {
             grid-area: desc;
             color: $text-primary;
-            margin: 0;
+            margin: 24px 40px 0 0;
             font-size: 28px;
         }
 
         &__btn {
             grid-area: btn;
-            align-self: start;
+            align-self: end;
             justify-self: start;
         }
 
@@ -208,6 +208,7 @@
         }
 
         &__title {
+            text-align: center;
             margin-bottom: 40px;
         }
 
@@ -279,7 +280,7 @@
     }
 }
 
-@media (max-width: $breakpoint-small-desktop) {
+@media (max-width: ($breakpoint-laptop - 1)) {
     .company-page {
         .company {
             &-hero {
@@ -311,6 +312,7 @@
             }
 
             &-pethouse {
+                margin-top: 8px;
                 margin-bottom: 24px;
 
                 &__label {
@@ -336,7 +338,7 @@
                         width: 32px;
                         height: 25px;
                         top: 16px;
-                        background: url('../images/icons/quotes-mobile.svg');
+                        background: url('/images/icons/quotes-mobile.svg');
                     }
 
                     &::before {
@@ -394,7 +396,7 @@
             }
 
             &-reasons {
-                margin-bottom: 24px;
+                margin-bottom: 0;
 
                 &__title {
                     margin-bottom: 24px;
@@ -443,12 +445,12 @@
     }   
 }
 
-@media (max-width: $breakpoint-tablet) {
+@media (max-width: ($breakpoint-tablet - 1)) {
     .company-page {
         .company {
             &-price {
                 flex-direction: column;
-                margin: 40px 0;
+                margin: 8px 0;
                 gap: 24px;
 
                 &__title,

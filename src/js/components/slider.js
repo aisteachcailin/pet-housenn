@@ -113,7 +113,7 @@ export function initSliders() {
             modules: [Pagination],
             slidesPerView: 1,
             spaceBetween: 16,
-            centeredSlides: true,
+            centeredSlides: false,
             grabCursor: true,
             watchOverflow: true,
             pagination: {
@@ -124,12 +124,14 @@ export function initSliders() {
                 320: {
                     slidesPerView: 1,
                     spaceBetween: 16,
+                    centeredSlides: false,
                 },
-                768: {
-                    slidesPerView: 1.4,
-                    spaceBetween: 20,
+                600: {
+                    slidesPerView: 1.6,
+                    spaceBetween: 48,
+                    centeredSlides: true,
                 },
-                1340: {
+                1024: {
                     enabled: false,
                 },
             },
@@ -137,6 +139,42 @@ export function initSliders() {
             observeParents: true,
         });
     });
+
+    const mainFeatureSliders = document.querySelectorAll('[data-slider="main-features"]');
+    mainFeatureSliders.forEach((slider) => {
+        const paginationEl = slider.querySelector('.features__pagination');
+
+        new Swiper(slider, {
+            modules: [Pagination],
+            slidesPerView: 1,
+            spaceBetween: 16,
+            centeredSlides: false,
+            grabCursor: true,
+            watchOverflow: true,
+            pagination: {
+                el: paginationEl,
+                clickable: true,
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 16,
+                    centeredSlides: false,
+                },
+                600: {
+                    slidesPerView: 1.6,
+                    spaceBetween: 48,
+                    centeredSlides: true,
+                },
+                1024: {
+                    enabled: false,
+                },
+            },
+            observer: true,
+            observeParents: true,
+        });
+    });
+
 
     const productionVideo = document.querySelector('.production-video');
     
@@ -160,7 +198,7 @@ export function initSliders() {
         });
     }
 
-        const videoLink = document.querySelector('.production-slider__big a');
+    const videoLink = document.querySelector('.production-slider__big a');
     const videoElement = document.querySelector('.production-video');
     
     if (videoLink && videoElement) {

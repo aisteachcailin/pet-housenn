@@ -70,7 +70,7 @@
     }
 }
 
-@media (max-width: $breakpoint-small-desktop) {
+@media (max-width: ($breakpoint-laptop - 1)) {
     .contacts {
         margin-top: 32px;
         gap: 32px;
@@ -125,7 +125,7 @@
     }
 }
 
-@media (max-width: $breakpoint-tablet) {
+@media (max-width: ($breakpoint-tablet - 1)) {
     .contacts {
         flex-direction: column;
 

@@ -11,7 +11,7 @@ export const products = [
         pack: '32 шт',
         purpose: 'Пиво, газированные напитки',
         type: 'Бутылки',
-        price: 6.30
+        price: 7.70
     },
     {
         id: '2',
@@ -23,7 +23,7 @@ export const products = [
         pack: '40 шт',
         purpose: 'Пиво, газированные напитки',
         type: 'Бутылки',
-        price: 6.30
+        price: 7.10
     },
     {
         id: '3',
@@ -35,7 +35,7 @@ export const products = [
         pack: '50 шт',
         purpose: 'Пиво, газированные напитки',
         type: 'Бутылки',
-        price: 6.30
+        price: 5.90
     },
     {
         id: '4',
@@ -47,7 +47,7 @@ export const products = [
         pack: '100 шт',
         purpose: 'Пиво, газированные напитки',
         type: 'Бутылки',
-        price: 6.30
+        price: 5.60
     },
     {
         id: '5',
@@ -59,7 +59,7 @@ export const products = [
         pack: '50 шт',
         purpose: 'Молоко',
         type: 'Бутылки',
-        price: 6.30
+        price: 6.60
     },
     {
         id: '6',
@@ -71,7 +71,7 @@ export const products = [
         pack: '50 шт',
         purpose: 'Молоко',
         type: 'Бутылки',
-        price: 6.30
+        price: 6.60
     },
     {
         id: '7',
@@ -83,7 +83,7 @@ export const products = [
         pack: '50 шт',
         purpose: 'Молоко',
         type: 'Бутылки',
-        price: 6.30,
+        price: 6.60,
         isTopSale: true
     },
     {
@@ -96,7 +96,7 @@ export const products = [
         pack: '100 шт',
         purpose: 'Молоко',
         type: 'Бутылки',
-        price: 6.30
+        price: 5.60
     },
     {
         id: '9',
@@ -108,7 +108,7 @@ export const products = [
         pack: '100 шт',
         purpose: 'Молоко',
         type: 'Бутылки',
-        price: 6.30
+        price: 5.60
     },
     {
         id: '10',
@@ -120,7 +120,7 @@ export const products = [
         pack: '100 шт',
         purpose: 'Молоко',
         type: 'Бутылки',
-        price: 6.30
+        price: 5.60
     },
     {
         id: '11',
@@ -132,7 +132,7 @@ export const products = [
         pack: '100 шт',
         purpose: 'Молоко',
         type: 'Бутылки',
-        price: 6.30,
+        price: 5.60,
         isTopSale: true
     },
     {
@@ -145,7 +145,7 @@ export const products = [
         pack: '150 шт',
         purpose: 'Лимонады, соки, вода',
         type: 'Бутылки',
-        price: 6.30
+        price: 4.50
     },
     {
         id: '13',
@@ -157,7 +157,7 @@ export const products = [
         pack: '200 шт',
         purpose: 'Лимонады, соки, вода',
         type: 'Бутылки',
-        price: 6.30
+        price: 4.30
     },
     {
         id: '14',
@@ -169,7 +169,7 @@ export const products = [
         pack: '15 шт',
         purpose: 'Химия, удобрения, вода; Пиво, газированные напитки',
         type: 'Канистры',
-        price: 6.30,
+        price: 16.10,
         isTopSale: true
     },
     {
@@ -182,7 +182,7 @@ export const products = [
         pack: '15 шт',
         purpose: 'Пиво, газированные напитки; Химия, удобрения, вода; Масла, соусы; Косметика, другая тара',
         type: 'Бутылки',
-        price: 6.30,
+        price: 16.10,
         isTopSale: true
     },
     {
@@ -195,7 +195,7 @@ export const products = [
         pack: '18 шт',
         purpose: 'Химия, удобрения, вода',
         type: 'Бутылки',
-        price: 6.30
+        price: 13.40
     },
     {
         id: '17',
@@ -231,7 +231,7 @@ export const products = [
         pack: '100 шт',
         purpose: 'Химия, удобрения, вода; Масла, соусы; Косметика, другая тара',
         type: 'Бутылки',
-        price: 6.30
+        price: 11.30
     },
     {
         id: '20',
@@ -243,7 +243,7 @@ export const products = [
         pack: '100 шт',
         purpose: 'Химия, удобрения, вода; Масла, соусы; Косметика, другая тара',
         type: 'Бутылки',
-        price: 6.30
+        price: 11.30
     },
     {
         id: '21',
@@ -255,7 +255,7 @@ export const products = [
         pack: '100 шт',
         purpose: 'Химия, удобрения, вода; Масла, соусы; Косметика, другая тара',
         type: 'Бутылки',
-        price: 6.30
+        price: 11.30
     },
     {
         id: '22',
@@ -267,7 +267,7 @@ export const products = [
         pack: '100 шт',
         purpose: 'Химия, удобрения, вода',
         type: 'Бутылки',
-        price: 6.30
+        price: 11.30
     },
     {
         id: '23',
@@ -279,7 +279,7 @@ export const products = [
         pack: '100 шт',
         purpose: 'Химия, удобрения, вода',
         type: 'Другая тара',
-        price: 6.30
+        price: 11.30
     },
     {
         id: '24',
@@ -291,7 +291,7 @@ export const products = [
         pack: '100 шт',
         purpose: 'Масла, соусы; Косметика, другая тара',
         type: 'Бутылки',
-        price: 6.30
+        price: 11.30
     },
     {
         id: '25',
@@ -303,7 +303,7 @@ export const products = [
         pack: '100 шт',
         purpose: 'Масла, соусы; Косметика, другая тара',
         type: 'Бутылки',
-        price: 6.30
+        price: 11.30
     },
     {
         id: '26',
@@ -315,7 +315,7 @@ export const products = [
         pack: '200 шт',
         purpose: 'Масла, соусы',
         type: 'Бутылки',
-        price: 6.30
+        price: 11.30
     },
     {
         id: '27',
@@ -327,7 +327,7 @@ export const products = [
         pack: '100 шт',
         purpose: 'Масла, соусы; Косметика, другая тара',
         type: 'Бутылки',
-        price: 6.30
+        price: 11.30
     },
     {
         id: '28',
@@ -339,7 +339,7 @@ export const products = [
         pack: '100 шт',
         purpose: 'Масла, соусы; Косметика, другая тара',
         type: 'Бутылки',
-        price: 6.30
+        price: 5.90
     },
     {
         id: '29',
@@ -351,7 +351,7 @@ export const products = [
         pack: '100 шт',
         purpose: 'Масла, соусы; Косметика, другая тара',
         type: 'Бутылки',
-        price: 6.30
+        price: 11.30
     },
     {
         id: '30',
@@ -363,7 +363,7 @@ export const products = [
         pack: '200 шт',
         purpose: 'Масла, соусы; Химия, удобрения, вода',
         type: 'Бутылки',
-        price: 6.30
+        price: 4.50
     },
     {
         id: '31',
@@ -375,7 +375,7 @@ export const products = [
         pack: '200 шт',
         purpose: 'БАДы, сыпучие и гранулированные продукты',
         type: 'Бутылки',
-        price: 6.30
+        price: 4.30
     },
     {
         id: '32',
@@ -387,7 +387,7 @@ export const products = [
         pack: '200 шт',
         purpose: 'БАДы, сыпучие и гранулированные продукты',
         type: 'Бутылки',
-        price: 6.30
+        price: 4.30
     },
     {
         id: '33',
@@ -399,7 +399,7 @@ export const products = [
         pack: '',
         purpose: 'В ассортименте',
         type: 'Пробки, крышки, колпачки, ручки',
-        price: 6.30
+        price: 1.00
     },
     {
         id: '34',
@@ -411,7 +411,7 @@ export const products = [
         pack: '',
         purpose: 'В ассортименте',
         type: 'Пробки, крышки, колпачки, ручки',
-        price: 6.30
+        price: 0.80
     },
     {
         id: '35',
@@ -423,7 +423,7 @@ export const products = [
         pack: '',
         purpose: '17гр — 88 гр в ассортименте',
         type: 'Преформы',
-        price: 6.30
+        price: 2.50
     },
         {
         id: '36',
@@ -433,7 +433,7 @@ export const products = [
         neck: '48 мм',
         standard: '',
         pack: '',
-        purpose: 'БАДы, сыпучие и гранулированные продукты',
+        purpose: 'Вместимость - 1.5 кг на диаметр электрода 3,0 мм; длина 350 мм',
         type: 'Бутылки',
         price: 6.30
     }

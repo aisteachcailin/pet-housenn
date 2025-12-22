@@ -1,5 +1,8 @@
 .error-page {
-    background-image: url('../images/background/404.jpg') no-repeat center/cover;
+    background-image: url('/images/background/404.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +34,7 @@
     }
 }
 
-@media (max-width: $breakpoint-small-desktop) {
+@media (max-width: ($breakpoint-laptop - 1)) {
     .error-card {
 
         &__title {
@@ -49,7 +52,7 @@
     }
 }
 
-@media (max-width: $breakpoint-tablet) {
+@media (max-width:($breakpoint-tablet - 1)) {
     .error-card {
         width: 100%;
 

@@ -4,7 +4,7 @@ import { initContactModal } from './components/modal.js';
 import { initProductDetailToggle } from './components/productCard.js';
 import { initTopSales } from './components/products.js';
 import { initSliders } from './components/slider.js';
-import { initCategoryTags, initProductionFilters } from './components/filters.js';
+import { initCategoryTags, initProductionFilters, initCatalogLinks } from './components/filters.js';
 import { initFancyboxGallery } from './components/gallery.js';
 
 const $ = selector => document.querySelector(selector);
@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initSliders();
     initCategoryTags();
     initProductionFilters();
+    initCatalogLinks();
     initFancyboxGallery();
     initProductDetailToggle()
 
-    // Обработка висящих союзов и предлогов
     const shortWords = [
         'в', 'на', 'под', 'над', 'за', 'из', 'от', 'до', 'по', 
         'со', 'ко', 'о', 'у', 'без', 'для', 'к', 'с', 'и', 'а', 

@@ -3,7 +3,7 @@ import { renderProductCards } from './components/productCard.js';
 
 const DESKTOP_ITEMS_PER_PAGE = 12;
 const MOBILE_ITEMS_PER_PAGE = 9;
-const BREAKPOINT_SMALL_DESKTOP = 1340;
+const BREAKPOINT_SMALL_DESKTOP = 768;
 
 let itemsPerPage = getItemsPerPage();
 let currentPage = 1;
@@ -540,146 +540,72 @@ function renderPage(grid) {
 
 function initIndependentScroll() {
     const catalogFilters = document.querySelector('.catalog-filters');
-    if (!catalogFilters || window.innerWidth <= 1340) return;
+    if (!catalogFilters || window.innerWidth < 1280) return;
     
     let isHoveringFilters = false;
-    let isScrollingFilters = false;
+    let scrollAnimationFrame = null;
     let lastScrollTime = 0;
-    
+    const SCROLL_COOLDOWN = 16;
+
     function isInsideFilters(element) {
         if (!element) return false;
         return catalogFilters.contains(element) || element === catalogFilters;
     }
-    
-    function preventPageScroll(e) {
-        if (isScrollingFilters && isInsideFilters(e.target)) {
-            e.preventDefault();
-            e.stopPropagation();
-            return false;
-        }
-    }
-    
+
     catalogFilters.addEventListener('mouseenter', () => {
         isHoveringFilters = true;
     });
-    
-    catalogFilters.addEventListener('mouseleave', (e) => {
-        setTimeout(() => {
-            const hoveredElement = document.querySelector(':hover');
-            if (!isInsideFilters(hoveredElement)) {
-                isHoveringFilters = false;
-                isScrollingFilters = false;
-            }
-        }, 50);
+
+    catalogFilters.addEventListener('mouseleave', () => {
+        isHoveringFilters = false;
     });
-    
-    catalogFilters.addEventListener('wheel', (e) => {
+
+    function handleWheelScroll(e) {
         if (!isHoveringFilters) return;
         
         const now = Date.now();
-        if (now - lastScrollTime < 16) return;
-        lastScrollTime = now;
+        if (now - lastScrollTime < SCROLL_COOLDOWN) {
+            e.preventDefault();
+            return;
+        }
         
-        const delta = e.deltaY;
+        const delta = e.deltaY || e.detail || -e.wheelDelta;
         const maxScroll = catalogFilters.scrollHeight - catalogFilters.clientHeight;
         const currentScroll = catalogFilters.scrollTop;
+        
         const canScrollUp = currentScroll > 0 && delta < 0;
         const canScrollDown = currentScroll < maxScroll && delta > 0;
         
         if (canScrollUp || canScrollDown) {
-
-            isScrollingFilters = true;
             e.preventDefault();
             e.stopPropagation();
             
-            catalogFilters.scrollTop += delta * 0.9;
-            
-            if ((currentScroll <= 0 && delta < 0) || (currentScroll >= maxScroll && delta > 0)) {
-                setTimeout(() => {
-                    isScrollingFilters = false;
-                }, 100);
+            if (scrollAnimationFrame) {
+                cancelAnimationFrame(scrollAnimationFrame);
             }
-        } else {
-            isScrollingFilters = false;
-        }
-    }, { passive: false });
-    
-    document.addEventListener('wheel', preventPageScroll, { passive: false });
-    document.addEventListener('touchmove', preventPageScroll, { passive: false });
-
-    let touchStartY = 0;
-    let touchStartScrollTop = 0;
-    let isTouchActive = false;
-    
-    catalogFilters.addEventListener('touchstart', (e) => {
-        if (isInsideFilters(e.target)) {
-            isTouchActive = true;
-            isHoveringFilters = true;
-            isScrollingFilters = true;
-            touchStartY = e.touches[0].clientY;
-            touchStartScrollTop = catalogFilters.scrollTop;
-        }
-    }, { passive: true });
-    
-    catalogFilters.addEventListener('touchmove', (e) => {
-        if (isTouchActive && isScrollingFilters) {
-            e.preventDefault();
-            e.stopPropagation();
             
-            const touchY = e.touches[0].clientY;
-            const deltaY = touchStartY - touchY;
+            scrollAnimationFrame = requestAnimationFrame(() => {
+                catalogFilters.scrollTop += delta * 0.8;
+                lastScrollTime = now;
+                scrollAnimationFrame = null;
+            });
             
-            catalogFilters.scrollTop = touchStartScrollTop + deltaY * 1.2;
+            return false;
         }
-    }, { passive: false });
-    
-    catalogFilters.addEventListener('touchend', () => {
-        isTouchActive = false;
-        isScrollingFilters = false;
         
-        setTimeout(() => {
-            const hoveredElement = document.querySelector(':hover');
-            if (!isInsideFilters(hoveredElement)) {
-                isHoveringFilters = false;
-            }
-        }, 300);
-    });
-    
-    window.addEventListener('resize', () => {
-        if (window.innerWidth <= 1340) {
-            isHoveringFilters = false;
-            isScrollingFilters = false;
-        }
-    });
-
-    if (!document.getElementById('smooth-scroll-styles')) {
-        const style = document.createElement('style');
-        style.id = 'smooth-scroll-styles';
-        style.textContent = `
-            .catalog-filters {
-                scroll-behavior: smooth;
-                -webkit-overflow-scrolling: touch;
-                overflow-y: auto;
-                overflow-x: hidden;
-                max-height: 70vh;
-            }
-
-            .catalog-filters::-webkit-scrollbar {
-                width: 4px;
-                background: transparent;
-            }
-            
-            .catalog-filters::-webkit-scrollbar-thumb {
-                background: rgba(93, 169, 255, 0.3);
-                border-radius: 2px;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            }
-            
-            .catalog-filters:hover::-webkit-scrollbar-thumb {
-                opacity: 1;
-            }
-        `;
-        document.head.appendChild(style);
+        isHoveringFilters = false;
     }
+
+    function handleTouchScroll(e) {
+        if (!isInsideFilters(e.target)) return;
+        
+        e.stopPropagation();
+    }
+
+    catalogFilters.addEventListener('wheel', handleWheelScroll, { passive: false });
+    catalogFilters.addEventListener('touchmove', handleTouchScroll, { passive: true });
+
+    catalogFilters.addEventListener('touchend', () => {
+        isHoveringFilters = false;
+    });
 }
