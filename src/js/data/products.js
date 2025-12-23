@@ -207,7 +207,7 @@ export const products = [
         pack: '21 шт',
         purpose: 'Химия, удобрения, вода',
         type: 'Бутылки',
-        price: 6.30
+        price: 11.30
     },
     {
         id: '18',
@@ -219,7 +219,7 @@ export const products = [
         pack: '24 шт',
         purpose: 'Химия, удобрения, вода',
         type: 'Бутылки',
-        price: 6.30
+        price: 11.30
     },
     {
         id: '19',
@@ -278,9 +278,8 @@ export const products = [
         standard: 'BPF, PCO',
         pack: '100 шт',
         purpose: 'Химия, удобрения, вода',
-        type: 'Другая тара',
-        price: 11.30,
-        isNew: true
+        type: 'Бутылки',
+        price: 11.30
     },
     {
         id: '24',
@@ -376,7 +375,7 @@ export const products = [
         standard: 'Bericap',
         pack: '200 шт',
         purpose: 'БАДы, сыпучие и гранулированные продукты',
-        type: 'Бутылки',
+        type: 'с',
         price: 4.30,
         isNew: true
     },
@@ -438,8 +437,9 @@ export const products = [
         standard: '',
         pack: '',
         purpose: 'Вместимость - 1.5 кг на диаметр электрода 3,0 мм; длина 350 мм',
-        type: 'Бутылки',
-        price: 6.30
+        type: 'Другая тара',
+        price: 6.30,
+        isNew: true
     }
 ];
 
