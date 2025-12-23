@@ -318,7 +318,7 @@ section {
         display: flex;
         flex-direction: column;
         gap: 4px;
-        height: -webkit-fill-available;
+        min-height: 0;
     }
 
     &__title {
