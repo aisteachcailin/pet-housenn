@@ -14,9 +14,9 @@ export function initCategoryTags() {
         'Масла': ['Масла, соусы'],
         'Удобрения': ['Химия, удобрения, вода'],
         'Соусы': ['Масла, соусы'],
-        'Электроды': ['БАДы, сыпучие и гранулированные продукты'],
+        'Электроды': 'type=Другая тара',
         'БАДы, сыпучие и гранулированные продукты': ['БАДы, сыпучие и гранулированные продукты'],
-        'Упаковка для электродов': ['БАДы, сыпучие и гранулированные продукты'],
+        'Упаковка для электродов': 'type=Другая тара', 
         'Упаковки для соусов': ['Масла, соусы'],
         'Упаковка для БАДов, сыпучих и гранулированных продуктов': ['БАДы, сыпучие и гранулированные продукты']
     };
@@ -38,9 +38,15 @@ export function initCategoryTags() {
                 return;
             }
             
-            const filtersString = filters.join('|');
-            const url = `catalog.html?purpose=${encodeURIComponent(filtersString)}`;
-            window.location.href = url;
+            if (typeof filters === 'string' && filters.startsWith('type=')) {
+                const typeValue = filters.replace('type=', '');
+                const url = `catalog.html?type=${encodeURIComponent(typeValue)}`;
+                window.location.href = url;
+            } else {
+                const filtersString = filters.join('|');
+                const url = `catalog.html?purpose=${encodeURIComponent(filtersString)}`;
+                window.location.href = url;
+            }
         });
     });
 
@@ -59,9 +65,16 @@ export function initCategoryTags() {
                 
                 if (similarKey) {
                     const similarFilters = categoryMap[similarKey];
-                    const filtersString = similarFilters.join('|');
-                    const url = `catalog.html?purpose=${encodeURIComponent(filtersString)}`;
-                    window.location.href = url;
+                    
+                    if (typeof similarFilters === 'string' && similarFilters.startsWith('type=')) {
+                        const typeValue = similarFilters.replace('type=', '');
+                        const url = `catalog.html?type=${encodeURIComponent(typeValue)}`;
+                        window.location.href = url;
+                    } else {
+                        const filtersString = similarFilters.join('|');
+                        const url = `catalog.html?purpose=${encodeURIComponent(filtersString)}`;
+                        window.location.href = url;
+                    }
                     return;
                 }
                 
@@ -69,9 +82,15 @@ export function initCategoryTags() {
                 return;
             }
             
-            const filtersString = filters.join('|');
-            const url = `catalog.html?purpose=${encodeURIComponent(filtersString)}`;
-            window.location.href = url;
+            if (typeof filters === 'string' && filters.startsWith('type=')) {
+                const typeValue = filters.replace('type=', '');
+                const url = `catalog.html?type=${encodeURIComponent(typeValue)}`;
+                window.location.href = url;
+            } else {
+                const filtersString = filters.join('|');
+                const url = `catalog.html?purpose=${encodeURIComponent(filtersString)}`;
+                window.location.href = url;
+            }
         });
     });
 }
@@ -166,20 +185,9 @@ export function initProductionFilters() {
 }
 
 export function initCatalogLinks() {
-    const newProductsLink = document.querySelector('.new-products__btn[href="catalog.html"]');
-    if (newProductsLink) {
-        newProductsLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            const allNewProductsPurposes = [
-                'Масла, соусы'
-            ];
-            const filtersString = allNewProductsPurposes.join('|');
-            const url = `catalog.html?purpose=${encodeURIComponent(filtersString)}`;
-            window.location.href = url;
-        });
-    }
 
     const businessSection = document.querySelector('.business');
+    
     if (businessSection) {
         const businessCatalogLink = businessSection.querySelector('a[href="catalog.html"]');
         if (businessCatalogLink) {

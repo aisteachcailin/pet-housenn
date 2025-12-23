@@ -3,8 +3,13 @@ export function createProductCard(product) {
     card.className = 'product-card';
     card.dataset.productId = product.id;
     card.setAttribute('data-product-id', product.id);
+    
+    const isNew = product.isNew === true;
+    const newBadge = isNew ? '<div class="product-card__new">Новинка</div>' : '';
+
     card.innerHTML = `
         <div class="product-card__image">
+            ${newBadge}
             <img src="${product.image}" alt="${product.title}">
         </div>
         <h3 class="product-card__title">${product.title}</h3>

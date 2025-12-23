@@ -73,6 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (criteria.sort !== 'default') {
             filteredProducts = filteredProducts.slice().sort((a, b) => sortProducts(a, b, criteria.sort));
+        } else {
+            filteredProducts.sort((a, b) => {
+                return (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0);
+            });
         }
 
         currentPage = 1;
@@ -80,7 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCount(filteredProducts.length, countElement);
         renderPagination(paginationContainer, filteredProducts.length);
         scrollToProducts();
-        
         saveFiltersToURL(criteria);
     };
 
@@ -333,37 +336,48 @@ function matchesProduct(product, criteria) {
     }
 
     if (criteria.necks.length > 0) {
-        let matchesNeck = false;
+        let matchesAnyNeckFilter = false;
         
         criteria.necks.forEach(neckFilter => {
-            const productNeckCombined = `${product.neck} ${product.standard}`.trim();
-            if (productNeckCombined.includes(neckFilter) || neckFilter.includes(productNeckCombined)) {
-                matchesNeck = true;
-                return;
-            }
+            const filterLower = neckFilter.toLowerCase().trim();
+            const productNeckLower = product.neck ? product.neck.toLowerCase().replace('мм', '').trim() : '';
+            const productStandardLower = product.standard ? product.standard.toLowerCase() : '';
+        
+            const isSpecificFilter = filterLower.includes('bericap') || 
+                                     filterLower.includes('oil') || 
+                                     filterLower.includes('bpf') || 
+                                     filterLower.includes('pco');
             
-            if (product.neck && (neckFilter === product.neck || product.neck.includes(neckFilter))) {
-                matchesNeck = true;
-                return;
-            }
-            
-            if (product.neck && product.neck.includes(';')) {
-                const multipleNecks = product.neck.split(';').map(n => n.trim());
-                if (multipleNecks.some(neck => neck.includes(neckFilter) || neckFilter.includes(neck))) {
-                    matchesNeck = true;
-                    return;
+            if (isSpecificFilter) {
+                const filterNumber = filterLower.match(/\d+/);
+                const hasMatchingNeck = filterNumber && productNeckLower.includes(filterNumber[0]);
+                
+                const hasMatchingStandard = productStandardLower && (
+                    (filterLower.includes('bericap') && productStandardLower.includes('bericap')) ||
+                    (filterLower.includes('oil') && productStandardLower.includes('oil')) ||
+                    ((filterLower.includes('bpf') || filterLower.includes('pco')) && 
+                     (productStandardLower.includes('bpf') || productStandardLower.includes('pco')))
+                );
+                
+                if (hasMatchingNeck && hasMatchingStandard) {
+                    matchesAnyNeckFilter = true;
+                }
+            } 
+            else {
+                const filterNumber = filterLower.match(/\d+/);
+                if (filterNumber && productNeckLower.includes(filterNumber[0])) {
+                    matchesAnyNeckFilter = true;
                 }
             }
         });
-
-        if (!matchesNeck) {
+        
+        if (!matchesAnyNeckFilter) {
             return false;
         }
     }
 
     if (criteria.purposes.length > 0) {
         let matchesPurpose = false;
-        
         const productPurposes = product.purpose.split(';').map(p => p.trim());
         
         criteria.purposes.forEach(filterPurpose => {

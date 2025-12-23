@@ -44,9 +44,9 @@ window.initForms = initForms;
 
 const CONFIG = {
     emailService: {
-        serviceID: 'service_ya8bqsn',
-        templateID: 'template_8b667mk',
-        publicKey: '0nE1_N7ayyxrXtTP_'
+        serviceID: 'service_evrhtqe',
+        templateID: 'template_d2hgftx',
+        publicKey: 'zqh90a2KsfVk8EtwZ'
     },
     patterns: {
         name: /^[а-яА-ЯёЁa-zA-Z\s-]{2,50}$/,

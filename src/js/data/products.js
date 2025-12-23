@@ -279,7 +279,8 @@ export const products = [
         pack: '100 шт',
         purpose: 'Химия, удобрения, вода',
         type: 'Другая тара',
-        price: 11.30
+        price: 11.30,
+        isNew: true
     },
     {
         id: '24',
@@ -303,7 +304,8 @@ export const products = [
         pack: '100 шт',
         purpose: 'Масла, соусы; Косметика, другая тара',
         type: 'Бутылки',
-        price: 11.30
+        price: 11.30,
+        isNew: true
     },
     {
         id: '26',
@@ -375,7 +377,8 @@ export const products = [
         pack: '200 шт',
         purpose: 'БАДы, сыпучие и гранулированные продукты',
         type: 'Бутылки',
-        price: 4.30
+        price: 4.30,
+        isNew: true
     },
     {
         id: '32',
@@ -387,7 +390,8 @@ export const products = [
         pack: '200 шт',
         purpose: 'БАДы, сыпучие и гранулированные продукты',
         type: 'Бутылки',
-        price: 4.30
+        price: 4.30,
+        isNew: true
     },
     {
         id: '33',
