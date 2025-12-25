@@ -17,6 +17,8 @@ export function createProductCard(product) {
             ${createDetail('Горловина', product.neck)}
             ${createDetail('Стандарт', product.standard)}
             ${createDetail('Упаковка', product.pack)}
+            ${createDetail('Вместимость', product.capacity)}
+            ${createDetail('Длина', product.length)}
             ${createDetail('Назначение', product.purpose)}
         </div>
         <div class="product-card__footer">

@@ -130,7 +130,7 @@ export const products = [
         neck: '38 мм',
         standard: 'Bericap',
         pack: '100 шт',
-        purpose: 'Молоко',
+        purpose: 'Молоко; Лимонады, соки, вода',
         type: 'Бутылки',
         price: 5.60,
         isTopSale: true
@@ -167,7 +167,7 @@ export const products = [
         neck: '48 мм',
         standard: 'Bericap',
         pack: '15 шт',
-        purpose: 'Химия, удобрения, вода; Пиво, газированные напитки',
+        purpose: 'Химия, удобрения, вода; Пиво, газированные напитки; Лимонады, соки, вода',
         type: 'Канистры',
         price: 16.10,
         isTopSale: true
@@ -180,7 +180,7 @@ export const products = [
         neck: '38 мм',
         standard: 'Bericap',
         pack: '15 шт',
-        purpose: 'Пиво, газированные напитки; Химия, удобрения, вода; Масла, соусы; Косметика, другая тара',
+        purpose: 'Пиво, газированные напитки; Химия, удобрения, вода; Масла, соусы; Косметика, другая тара; Лимонады, соки, вода',
         type: 'Бутылки',
         price: 16.10,
         isTopSale: true
@@ -363,7 +363,7 @@ export const products = [
         standard: 'BPF, PCO',
         pack: '200 шт',
         purpose: 'Масла, соусы; Химия, удобрения, вода',
-        type: 'Бутылки',
+        type: 'Флаконы',
         price: 4.50
     },
     {
@@ -436,9 +436,11 @@ export const products = [
         neck: '48 мм',
         standard: '',
         pack: '',
-        purpose: 'Вместимость - 1.5 кг на диаметр электрода 3,0 мм; длина 350 мм',
+        purpose: 'Косметика, другая тара',
         type: 'Другая тара',
         price: 6.30,
+        capacity: '1.5 кг на диаметр электрода 3,0 мм',
+        length: '350 мм',
         isNew: true
     }
 ];

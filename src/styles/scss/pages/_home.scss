@@ -356,7 +356,8 @@ section {
         span:first-child {
             font-weight: $font-weight-light;
             color: $text-secondary;
-            width: 40%;
+            width: 45%;
+            word-wrap: normal;
             flex-shrink: 0;
         }
     

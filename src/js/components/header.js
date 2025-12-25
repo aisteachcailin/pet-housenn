@@ -39,40 +39,7 @@ function initSmoothScroll() {
             }
             return;
         }
-        
-        if (href.includes('company') && href.includes('#margcom-more')) {
-            if (link.textContent.includes('Подробнее о ГК') || link.textContent.includes('Подробнее')) {
-                e.preventDefault();
-                const urlParts = href.split('#');
-                const baseUrl = urlParts[0];
-                const anchor = urlParts[1];
-                
-                window.location.href = baseUrl;
-                
-                setTimeout(() => {
-                    const slider = document.getElementById(anchor) || document.querySelector('.pictures-slider');
-                    if (slider) {
-                        const header = document.querySelector('.header');
-                        const headerHeight = header ? header.offsetHeight : 72;
-                        const sliderTop = slider.getBoundingClientRect().top + window.pageYOffset;
-                        window.scrollTo({ top: sliderTop - headerHeight, behavior: 'smooth' });
-                    }
-                }, 300);
-            }
-        }
     });
-    
-    if (window.location.pathname.includes('company') && window.location.hash === '#margcom-more') {
-        setTimeout(() => {
-            const slider = document.getElementById('margcom-more') || document.querySelector('.pictures-slider');
-            if (slider) {
-                const header = document.querySelector('.header');
-                const headerHeight = header ? header.offsetHeight : 72;
-                const sliderTop = slider.getBoundingClientRect().top + window.pageYOffset;
-                window.scrollTo({ top: sliderTop - headerHeight, behavior: 'smooth' });
-            }
-        }, 300);
-    }
 }
 
 function initMobileMenu() {
