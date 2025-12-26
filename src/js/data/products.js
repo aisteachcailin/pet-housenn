@@ -338,7 +338,7 @@ export const products = [
         neck: '28 мм',
         standard: 'OIL',
         pack: '100 шт',
-        purpose: 'Масла, соусы; Косметика, другая тара',
+        purpose: 'Масла, соусы',
         type: 'Бутылки',
         price: 5.90
     },
@@ -350,7 +350,7 @@ export const products = [
         neck: '28 мм',
         standard: 'OIL',
         pack: '100 шт',
-        purpose: 'Масла, соусы; Косметика, другая тара',
+        purpose: 'Масла, соусы',
         type: 'Бутылки',
         price: 11.30
     },
@@ -362,7 +362,7 @@ export const products = [
         neck: '28 мм',
         standard: 'BPF, PCO',
         pack: '200 шт',
-        purpose: 'Масла, соусы; Химия, удобрения, вода',
+        purpose: 'Масла, соусы; Химия, удобрения, вода; Косметика, другая тара',
         type: 'Флаконы',
         price: 4.50
     },
