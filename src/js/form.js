@@ -1,6 +1,6 @@
 function initForms() {
     if (typeof emailjs !== 'undefined') {
-        emailjs.init('bkNMM51XqfqT68kLx');
+        emailjs.init('zqh90a2KsfVk8EtwZ');
     }
     
     ['customForm', 'modalForm'].forEach((formId) => {
@@ -44,8 +44,8 @@ window.initForms = initForms;
 
 const CONFIG = {
     emailService: {
-        serviceID: 'service_evrhtqe',
-        templateID: 'template_d2hgftx',
+        serviceID: 'service_ya8bqsn',
+        templateID: 'template_8b667mk',
         publicKey: 'zqh90a2KsfVk8EtwZ'
     },
     patterns: {
