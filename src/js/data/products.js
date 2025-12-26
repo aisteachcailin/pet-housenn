@@ -167,7 +167,7 @@ export const products = [
         neck: '48 мм',
         standard: 'Bericap',
         pack: '15 шт',
-        purpose: 'Химия, удобрения, вода; Пиво, газированные напитки;',
+        purpose: 'Химия, удобрения, вода',
         type: 'Канистры',
         price: 16.10,
         isTopSale: true
@@ -180,7 +180,7 @@ export const products = [
         neck: '38 мм',
         standard: 'Bericap',
         pack: '15 шт',
-        purpose: 'Пиво, газированные напитки; Химия, удобрения, вода; Масла, соусы; Косметика, другая тара;',
+        purpose: 'Химия, удобрения, вода',
         type: 'Канистры',
         price: 16.10,
         isTopSale: true
