@@ -289,7 +289,7 @@ export const products = [
         neck: '28 мм',
         standard: 'OIL',
         pack: '100 шт',
-        purpose: 'Масла, соусы; Косметика, другая тара',
+        purpose: 'Масла, соусы',
         type: 'Бутылки',
         price: 11.30
     },
@@ -326,7 +326,7 @@ export const products = [
         neck: '28 мм',
         standard: 'OIL',
         pack: '100 шт',
-        purpose: 'Масла, соусы; Косметика, другая тара',
+        purpose: 'Масла, соусы',
         type: 'Бутылки',
         price: 11.30
     },
