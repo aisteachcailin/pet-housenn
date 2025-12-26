@@ -97,7 +97,8 @@ section {
     }
 
     &:hover {
-        padding: 7px 37px 7px 13px;
+        // padding: 7px 37px 7px 13px;
+        transform: scale(1.05);
         background: rgba(255, 255, 255, 0.3);
         box-shadow: 
             1px -1px 6px rgba(190, 220, 255, 0.15),
@@ -116,19 +117,19 @@ section {
             opacity: 0.4;
         }
 
-        &::after {
-            content: '';
-            position: absolute;
-            right: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 16px;
-            height: 16px;
-            background: url('/images/icons/arrow-black.svg');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-        }
+        // &::after {
+        //     content: '';
+        //     position: absolute;
+        //     right: 14px;
+        //     top: 50%;
+        //     transform: translateY(-50%);
+        //     width: 16px;
+        //     height: 16px;
+        //     background: url('/images/icons/arrow-black.svg');
+        //     background-repeat: no-repeat;
+        //     background-position: center;
+        //     background-size: contain;
+        // }
     }
 }
 
