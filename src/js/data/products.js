@@ -438,7 +438,7 @@ export const products = [
         pack: '',
         purpose: 'Косметика, другая тара',
         type: 'Другая тара',
-        price: 6.30,
+        price: 25.00,
         capacity: '1.5 кг на диаметр электрода 3,0 мм',
         length: '350 мм',
         isNew: true
